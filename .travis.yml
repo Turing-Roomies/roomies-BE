@@ -6,3 +6,11 @@ addons:
 script:
 - bundle exec rails db:{create,migrate} RAILS_ENV=test
 - bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: Hv1B6jUR3Dt6y9h1lTshlJH34iRCMpIUBHGt5N701tfjW80Yny3VBNxuLMMp1W4GGWyxP5kDDiSrFNV+hg4hvKDSBfZZA7YF/m8aRRFtKWrh7Mzw3QQMXgQGBNuHvWn2Nc/zyZyzRXRXj4UB+iCqb0xdJKVLSu36SFUKk9uBbfbKLijV26lYAoivCA3JsK5mXO4xeU25CGGFrJ+6h/IfOUrmHoAMAKZZ5YZkosQB0s/f+NcX6xIEys2+569dXhEjrpT/UfGL8dJgorwyyvL+Zimom6FCPHV/0iAw2D5sNT6jD57pbEZfLLoJzxVDyFjeDqaMDlF68PsAWlYbGrWuG3dT5xY8gxctvdQjGbeiUv7/HXU00bSTSsMrqqMJRC5YlLtN7AiNDPgQ6mzrYLb1mbpjvet1K1z5KMOkYp7djY/oBJJTpEMMsW3ubvV364pCgUaDnbIiywLAtYdO/Jko+v2gzZOJLV/2bMLQlfFpsZFgVZJlzj497dAq0PEGK/OzJbqXexoK49I2Rwjl/enkTFtkR1/Px/qxHuJywOMEGd2J70xasXk0S4YJUGicdVOiAwb9kPMfbQZz7TmxwPrmDHxvHnx4YqQkeyIUgANcFwRvNTYjhTMmBQI7Tmj497h/cZBL48pv4ZA51j8LYvETPOUwu1+1CcA/y9NXnIDSazE=
+  app: turing-roomies-be
+  on: 
+    repo: Turing-Roomies/roomies-be
+  run: rails db:migrate
