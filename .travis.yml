@@ -12,5 +12,8 @@ deploy:
     secure: bDy+xygNnCgIk4WtnylKYt400I4sN6Ls5AB434EsfLRO1tTaMuDHx7bNWPNvE+huuUiIS30drRT97BO883DdRjcIpfwD5i8kjomzPbDP0HwsZ9IgqMRdRc08fPeFFmLbI4Czn0rE8PSy2wwsSBDHkBGsXkjGkME2FJZ0mvByjTYpRZZWXCIIQ237mOLWbHMxPlS8eROT2DImSXp/m68sb8s/B28XgAHV7gGdYbc2cP8kkDp/I1iGgJd+xbYS+FujvJenfzvIh1zMvt83wuPRCbSe46UMxQfdZBDvz5KnQeeWgHA2G+g8bYHWUf7OGXoFjlwIK/rqLZCjJGp5iCcwQyOspAKNa+tDZ93wt+Oxc+RR9lAl+8KtFbfCbrOTM1X2BDH8SQ1792ea1RkWveLoKXm6pf23RCMQqHRHzE4n6KAKknv/4vLnD+yCP1oHhvo8HaBM/dr6PPfAXeyv8jRmyf+Gd7jOmdPJqgrDpYf2vJGZyMbyzarWxK2CEAEt6+Y5de20suAEOA9aG57p0IZbKdIuyg4F3I3xAS8ab0dmmSO605UNcYrct0i9rPAVt6oYHHubNhpS6QLL7k2S0LMNqvl5pESz4KfXYBH0lSInMBcrg3cwssarBzUu3mKxJbFivVnOupNte9H/UF73T9lgeaTw7ORqga1DLjg0HISMc7A=
   app: turing-roomies-be
   on:
+    branches: 
+      only:
+        - main
     repo: Turing-Roomies/roomies-be
   run: rails db:migrate
