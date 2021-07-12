@@ -1,24 +1,43 @@
-# README
+## Roomies-Backend:
+Roomies is an app designed to connect people looking for roommates in any city based on specifications such as age, gender, budget, etc. Roomies Backend specifically creates several APIs to be used by the frontend, including the signed-in user's info, as well as that user's favorited roommates, and all users for a specific search query. 
+### Front End Production
+[Roomies website](https://turing-roomies.herokuapp.com/)
+[Roomies FE Repo](https://github.com/Turing-Roomies/roomies-fe)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Versions
+- Rails 5.2.5
+- Ruby 2.5.3
+- Bundler 2.1.4
 
-Things you may want to cover:
+## Setup
+Run through the standard Rails setup.
 
-* Ruby version
+```$ bundle install```
 
-* System dependencies
+```$ rake db:{create,migrate}```
 
-* Configuration
+```$ rails s```
 
-* Database creation
+Navigate to http://localhost:3000
 
-* Database initialization
+## API Endpoint Examples
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Technologies
+- Framework: Ruby on Rails
+- Testing: RSpec
+- Response Caching: VCR & Webmock
+- Test Coverage: SimpleCov
+- Docker
 
-* ...
+
+## Backend Authors  
+* Harrison Blake[GitHub](https://github.com/harrison-blake) | [LinkedIn](https://www.linkedin.com/in/harrison-blake-802094200/)
+* Wyatt Wicks [GitHub](https://github.com/Wyattwicks) | [LinkedIn](https://www.linkedin.com/in/wyattwicks/)
+
+## Frontend Authors
+* Dustin
+* Michann
+* Sarah
+* Andrew
