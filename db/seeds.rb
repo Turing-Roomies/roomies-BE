@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 fl = Location.create!(city: "West Palm Beach", state: "FL")
+ol = Location.create!(city: "Orlando", state: "FL")
 co = Location.create!(city: "Denver", state: "CO")
 md = Location.create!(city: "Baltimore", state: "MD")
 
@@ -22,6 +23,9 @@ User.create!(email: "sarah@email.com", password: "test", name: "Sarah Lane",
 User.create!(email: "andrew@email.com", password: "test", name: "Andrew Carlin",
               location: fl, gender: 1, age: 25)
 
+User.create!(email: "dusty@email.com", password: "test", name: "The Dust",
+              location: md, gender: 0, age: 90)
+
 User.create!(email: "wyatt@email.com", password: "test", name: "Wyatt Wicks",
               location: co, gender: 1, age: 27)
 
@@ -33,3 +37,5 @@ User.create!(email: "coolemail@email.com", password: "80209", name: "testy mctes
 
 User.create!(email: "jeffbezos@amazon.com", password: "dragon", name: "Jeff Bezos",
              location: md, gender: 0, age: 90)
+
+#min 20 user with locations distributed equally among them
