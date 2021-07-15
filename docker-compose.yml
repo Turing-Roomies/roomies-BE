@@ -16,6 +16,7 @@ services:
   web:
     # The root directory from which we're building.
     build: .
+    image: yitwix/roomies-be_web:latest
     links:
       - postgres
     volumes:

@@ -13,3 +13,9 @@ RUN bundle install
 COPY . .
 
 CMD ["rails", "server", "-b", "0.0.0.0"]]
+
+## docker commands for terminal
+# docker-compose build
+# docker-compose up --remove-orphans
+# docker-compose run web bundle exec rake db:create 
+# docker-compose run web bundle exec rake db:migrate

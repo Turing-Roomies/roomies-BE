@@ -38,10 +38,6 @@ services:
     depends_on:
       - 'redis'
       - 'postgres'
-  # /.roomies-be.env
-
-  # DATABASE_URL=postgresql://roomies-be:whateverPWYouWant@postgres:5432/PostgresUsername?encoding=utf8&pool=5&timeout=5000
-  # /config/database.yml
 
 development:
   url: <%= ENV['DATABASE_URL'].gsub('?', '_development?' ) %>
