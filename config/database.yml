@@ -39,9 +39,21 @@ services:
       - 'redis'
       - 'postgres'
 
+# development:
+#   url: <%= ENV['DATABASE_URL'].gsub('?', '_development?' ) %>
+# test:
+#   url: <%= ENV['DATABASE_URL'].gsub('?', '_test?' ) %>
+# production:
+#   url: <%= ENV['DATABASE_URL'].gsub('?', '_production?' ) %>
+
 development:
-  url: <%= ENV['DATABASE_URL'].gsub('?', '_development?' ) %>
+  <<: *default
+  database: roomies-be_development
 test:
-  url: <%= ENV['DATABASE_URL'].gsub('?', '_test?' ) %>
+  <<: *default
+  database: roomies-be_test
 production:
-  url: <%= ENV['DATABASE_URL'].gsub('?', '_production?' ) %>
+  <<: *default
+  database: roomies-be_production
+  username: roomies-be
+  password: <%= ENV['ROOMIES-BE_DATABASE_PASSWORD'] %>
