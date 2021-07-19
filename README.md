@@ -91,7 +91,7 @@ Body : {
 
 #### DECLINING A ROOMIE REQUEST
 
-Endpoint: https://turing-roomies-be.herokuapp.com/api/v1/roomie_requests
+Endpoint: https://turing-roomies-be.herokuapp.com/api/v1/roomie_requests/:id
 Verb: DELETE
 
 ```
