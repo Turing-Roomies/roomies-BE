@@ -2,8 +2,7 @@ require 'rails_helper'
 
 describe 'Users API' do
   describe 'Happy Path' do
-    it "returns user data in the correct structure" do
-
+    before :each do
       defualt_location = Location.create!(city: "n/a", state: "n/a")
 
       User.create!(
@@ -17,7 +16,9 @@ describe 'Users API' do
                     password: 'test1',
                     location: defualt_location
                   )
+    end
 
+    it "returns user data in the correct structure" do
       VCR.use_cassette('return_all_users') do
         get '/api/v1/users'
       end
