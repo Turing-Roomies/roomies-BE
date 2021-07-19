@@ -46,6 +46,23 @@ Navigate to http://localhost:3000
 
 ## API Endpoint Examples
 
+#### USER LOGIN
+
+Endpoint: http://localhost:3000/api/v1/sessions
+Verb: POST
+
+```
+Body: {
+         "email": "email@email.com",
+         "password": "password"
+      }
+```
+
+#### RETURN ALL USERS
+
+Endpoint: http://localhost:3000/api/v1/sessions
+Verb: GET
+
 #### CREATING A ROOMIE REQUEST
 
 Endpoint: https://turing-roomies-be.herokuapp.com/api/v1/roomie_requests
