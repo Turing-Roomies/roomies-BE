@@ -71,8 +71,7 @@ Verb: POST
 ```
 Body: {
          "requestor_id": 5,
-         "receiver_id": 9,
-         "status": "pending"
+         "receiver_id": 9
       }
 ```
       
@@ -98,8 +97,7 @@ Verb: DELETE
 ```
 Body: {
          "requestor_id": 5,
-         "receiver_id": 9,
-         "status": "declined"
+         "receiver_id": 9
       }
 ```
 
