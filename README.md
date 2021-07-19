@@ -17,7 +17,7 @@
 
 Roomies is an app designed to connect people looking for roommates in any city based on specifications such as age, gender, budget, etc. Roomies Backend specifically creates several APIs to be used by the frontend, including the signed-in user's info, as well as that user's favorited roommates, and all users for a specific search query. 
 
-- Project Spec [LINK](https://mod4.turing.edu/projects/capstone/)
+- [Project Spec](https://mod4.turing.edu/projects/capstone/)
 
 ## Front End Production
 
