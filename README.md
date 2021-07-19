@@ -48,7 +48,7 @@ Navigate to http://localhost:3000
 
 #### USER LOGIN
 
-Endpoint: http://localhost:3000/api/v1/sessions
+Endpoint: https://turing-roomies-be.herokuapp.com/api/v1/sessions
 Verb: POST
 
 ```
@@ -60,7 +60,7 @@ Body: {
 
 #### RETURN ALL USERS
 
-Endpoint: http://localhost:3000/api/v1/sessions
+Endpoint: https://turing-roomies-be.herokuapp.com/api/v1/users
 Verb: GET
 
 #### CREATING A ROOMIE REQUEST
