@@ -33,12 +33,14 @@ Roomies is an app designed to connect people looking for roommates in any city b
 
 ## Technologies
 
-- Framework: Ruby on Rails
+- Language: Ruby <img alt="Ruby" src="https://img.shields.io/badge/ruby-%23CC342D.svg?style=for-the-badge&logo=ruby&logoColor=white"/>
+- Framework: Rails <img alt="Rails" src="https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white"/>
 - Testing: RSpec
 - Response Caching: VCR & Webmock
 - Test Coverage: SimpleCov
 - [Docker](https://hub.docker.com/repository/docker/yitwix/roomies-be_web)
 - CI: TravisCI ![TravisCI](https://img.shields.io/badge/-Travis_CI-D9D192?logo=travis-ci&logoColor=C63148&style=for-the-badge)
+- Database: Postgres <img alt="Postgres" src ="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white"/>
 
 ## Setup
 
