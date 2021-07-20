@@ -3,18 +3,18 @@ require 'rails_helper'
 describe 'Roomie Requests API' do
   describe 'Happy Path' do
     before :each do
-      defualt_location = Location.create!(city: "n/a", state: "n/a")
+      default_location = Location.create!(city: "n/a", state: "n/a")
 
       @current_user = User.create!(
                     email: 'testemail@test.com',
                     password: 'test',
-                    location: defualt_location
+                    location: default_location
                   )
 
       @target_user = User.create!(
                     email: 'testemail1@test.com',
                     password: 'test1',
-                    location: defualt_location
+                    location: default_location
                   )
     end
 
@@ -62,9 +62,9 @@ describe 'Roomie Requests API' do
       expect(user[:data][:attributes][:roomie_requests_sent]).to be_empty
       expect(user[:data][:attributes][:roomie_requests_sent]).to be_empty
       expect(user[:data][:attributes][:roomie_requests_sent]).to be_empty
-      expect(user[:data][:attributes][:name]).to eq(@current_user.name)
       expect(@current_user.roomie_requests_as_requestor).to be_empty
       expect(@target_user.roomie_requests_as_receiver).to be_empty
+      expect(@current_user.roomie_requests_as_requestor[status]).to be_nil
     end
   end
 end

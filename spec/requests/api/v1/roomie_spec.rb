@@ -3,18 +3,18 @@ require 'rails_helper'
 describe 'Roomie API' do
   describe 'Happy Path' do
     before :each do
-      defualt_location = Location.create!(city: "n/a", state: "n/a")
+      default_location = Location.create!(city: "n/a", state: "n/a")
 
       @current_user = User.create!(
                     email: 'testemail@test.com',
                     password: 'test',
-                    location: defualt_location
+                    location: default_location
                   )
 
       @target_user = User.create!(
                     email: 'testemail1@test.com',
                     password: 'test1',
-                    location: defualt_location
+                    location: default_location
                   )
     end
 

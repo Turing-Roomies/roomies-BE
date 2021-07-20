@@ -10,12 +10,12 @@ describe 'Sessions API' do
 
       headers = {"CONTENT_TYPE" => "application/json"}
 
-      defualt_location = Location.create!(city: "n/a", state: "n/a")
+      default_location = Location.create!(city: "n/a", state: "n/a")
 
       User.create!(
                     email: 'testemail@test.com',
                     password: 'test',
-                    location: defualt_location
+                    location: default_location
                   )
 
       VCR.use_cassette('user_login') do
@@ -36,6 +36,28 @@ describe 'Sessions API' do
       expect(user[:data][:attributes][:location]).to have_key(:city)
       expect(user[:data][:attributes][:location]).to have_key(:state)
       expect(user[:data][:attributes][:email]).to eq(user_params[:email])
+    end
+  end
+
+  describe 'Sad Path' do
+    it "shows an error message if credentials are bad" do
+      user_params = {
+                      email: 'sadpathemail@test.com',
+                      password: 'sad email',
+                    }
+
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      default_location = Location.create!(city: "n/a", state: "n/a")
+
+
+      VCR.use_cassette('user_login') do
+        post '/api/v1/sessions', headers: headers, params: user_params.to_json
+      end
+
+      user = JSON.parse(response.body, symbolize_names: true)
+      expect(response.status).to eq(400)
+      expect(user).to eq({:error=>"credentials are bad"})
     end
   end
 end
