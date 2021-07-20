@@ -19,8 +19,7 @@ class UserSerializer
   attribute :roomie_requests_sent do |object|
     object.roomie_requests_as_requestor.each do |roomie|
       {
-        receiver_id: roomie.receiver_id,
-        status: roomie.status,
+        receiver_id: roomie.receiver_id
       }
     end
   end
@@ -28,17 +27,13 @@ class UserSerializer
   attribute :roomie_requests_received do |object|
     object.roomie_requests_as_receiver.each do |roomie|
       {
-        requestor_id: roomie.requestor_id,
-        status: roomie.status,
+        requestor_id: roomie.requestor_id
       }
     end
   end
 
   attribute :roomies do |object|
     object.all_roomies.each do |roomie|
-      {
-        roomie_id: roomie.roomie_b_id
-      }
     end
   end
 end

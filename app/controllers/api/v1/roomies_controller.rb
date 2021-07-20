@@ -1,13 +1,13 @@
 class Api::V1::RoomiesController < ApplicationController
   def create
-    user = User.find(params[:roomie_a_id])
-    user.roomies_as_roomie_a.create!(roomie_params)
+    user = User.find(params[:requestor_id])
+    user.roomies_as_requestor.create!(roomie_params)
     render json: UserSerializer.new(user)
   end
 
   private
 
   def roomie_params
-    params.permit(:roomie_a_id, :roomie_b_id)
+    params.permit(:requestor_id, :receiver_id)
   end
 end

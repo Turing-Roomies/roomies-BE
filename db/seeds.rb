@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+Location.destroy_all
+
 fl_wpb = Location.create!(city: "West Palm Beach", state: "FL")
 fl_ol = Location.create!(city: "Orlando", state: "FL")
 co_denver = Location.create!(city: "Denver", state: "CO")
