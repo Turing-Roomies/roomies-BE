@@ -42,15 +42,15 @@ describe 'Roomie Requests API' do
       expect(@target_user.roomie_requests_as_receiver.first.receiver_id).to eq(@target_user.id)
     end
 
-    xit "deletes a roomie request and returns updated info" do
+    it "deletes a roomie request and returns updated info" do
       user_params = {
-                      requestor_id: @current_user.id,
-                      receiver_id: @target_user.id
+                      requestor_id: @target_user.id,
+                      receiver_id: @current_user.id
                     }
 
       headers = {"CONTENT_TYPE" => "application/json"}
 
-      @current_user.roomie_requests_as_requestor.create!(user_params)
+      @target_user.roomie_requests_as_requestor.create!(user_params)
 
       VCR.use_cassette('deletes_users_roomie_requests') do
         delete "/api/v1/roomie_requests/#{@current_user.id}", headers: headers, params: user_params.to_json
@@ -62,8 +62,9 @@ describe 'Roomie Requests API' do
       expect(user[:data][:attributes][:roomie_requests_sent]).to be_empty
       expect(user[:data][:attributes][:roomie_requests_sent]).to be_empty
       expect(user[:data][:attributes][:roomie_requests_sent]).to be_empty
-      expect(@target_user.roomie_requests_as_receiver).to be_empty
+      expect(user[:data][:attributes][:name]).to eq(@current_user.name)
       expect(@current_user.roomie_requests_as_requestor).to be_empty
+      expect(@target_user.roomie_requests_as_receiver).to be_empty
     end
   end
 end
