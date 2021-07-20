@@ -35,6 +35,7 @@ describe 'Sessions API' do
       expect(user[:data][:attributes]).to have_key(:location)
       expect(user[:data][:attributes][:location]).to have_key(:city)
       expect(user[:data][:attributes][:location]).to have_key(:state)
+      expect(user[:data][:attributes][:email]).to eq(user_params[:email])
     end
   end
 
