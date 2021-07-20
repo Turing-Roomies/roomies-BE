@@ -5,9 +5,9 @@
   - [Overview](#overview)
   - [Front End Production](#front-end-production)
   - [Versions](#versions)
+  - [Technologies](#technologies)
   - [Setup](#setup)
   - [API Endpoint Examples](#api-endpoint-examples)
-  - [Technologies](#technologies)
   - [Future Iterations](#future-iterations)
   - [Credits](#credits)
       - [Authors](#authors)
@@ -25,12 +25,20 @@ Roomies is an app designed to connect people looking for roommates in any city b
 - [Roomies FE Repo](https://github.com/Turing-Roomies/roomies-fe)
 
 
-
 ## Versions
 
 - Rails 5.2.5
 - Ruby 2.5.3
 - Bundler 2.1.4
+
+## Technologies
+
+- Framework: Ruby on Rails
+- Testing: RSpec
+- Response Caching: VCR & Webmock
+- Test Coverage: SimpleCov
+- [Docker](https://hub.docker.com/repository/docker/yitwix/roomies-be_web)
+- CI: TravisCI ![TravisCI](https://img.shields.io/badge/-Travis_CI-D9D192?logo=travis-ci&logoColor=C63148&style=for-the-badge)
 
 ## Setup
 
@@ -107,14 +115,7 @@ Body: {
 
 - https://www.getpostman.com/collections/da6e78b4ac7493445640
 
-## Technologies
 
-- Framework: Ruby on Rails
-- Testing: RSpec
-- Response Caching: VCR & Webmock
-- Test Coverage: SimpleCov
-- Docker
-- CI: TravisCI
 
 ## Future Iterations
 
