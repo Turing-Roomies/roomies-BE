@@ -7,10 +7,15 @@ class Api::V1::RoomieRequestsController < ApplicationController
   end
 
   def destroy
-    current_user = User.find(params[:roomie_request][:receiver_id])
-    current_user.roomie_requests_as_receiver.find_by(roomie_params).destroy
+    if roomie_requests_as_receiver.find_by(roomie_params)
+      current_user = User.find(params[:roomie_request][:receiver_id])
+      current_user.roomie_requests_as_receiver.find_by(roomie_params).destroy
 
-    render json: UserSerializer.new(current_user)
+      render json: UserSerializer.new(current_user)
+    else
+      render json: {error: "roomie requests doesn't exist"}, status: 400
+    end
+
   end
 
   private
