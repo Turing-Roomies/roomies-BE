@@ -13,18 +13,18 @@ class User < ApplicationRecord
     foreign_key: :receiver_id,
     class_name: :RoomieRequest
 
-  has_many :roomies_as_roomie_a,
-      foreign_key: :roomie_a_id,
+  has_many :roomies_as_requestor,
+      foreign_key: :requestor_id,
       class_name: :Roomie
 
-  has_many :roomies_as_roomie_b,
-      foreign_key: :roomie_b_id,
+  has_many :roomies_as_receiver,
+      foreign_key: :receiver_id,
       class_name: :Roomie
 
-   has_many :roomie_as, through: :roomies_as_roomie_b
-   has_many :roomie_bs, through: :roomies_as_roomie_a
+   has_many :requestors, through: :roomies_as_receiver
+   has_many :receivers, through: :roomies_as_requestor
 
    def all_roomies
-      self.roomies_as_roomie_a + self.roomies_as_roomie_b
+      self.roomies_as_requestor + self.roomies_as_receiver
    end
 end
