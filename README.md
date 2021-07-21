@@ -40,7 +40,7 @@ Roomies is an app designed to connect people looking for roommates in any city b
 - Response Caching: VCR & Webmock
 - Test Coverage: SimpleCov
 - Docker <img alt="Docker" src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white"/>
-- CI: TravisCI ![TravisCI](https://img.shields.io/badge/-Travis_CI-D9D192?logo=travis-ci&logoColor=C63148&style=for-the-badge)
+- Continuous Integration: TravisCI ![TravisCI](https://img.shields.io/badge/-Travis_CI-D9D192?logo=travis-ci&logoColor=C63148&style=for-the-badge)
 - Database: Postgres <img alt="Postgres" src ="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white"/>
 
 ## Setup
