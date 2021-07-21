@@ -8,6 +8,7 @@
   - [Technologies](#technologies)
   - [Setup](#setup)
   - [API Endpoint Examples](#api-endpoint-examples)
+  - [Test Coverage](#test-coverage)
   - [Future Iterations](#future-iterations)
   - [Credits](#credits)
       - [Authors](#authors)
@@ -118,6 +119,9 @@ Body: {
 
 - https://www.getpostman.com/collections/da6e78b4ac7493445640
 
+## Test Coverage
+
+![Screen Shot 2021-07-21 at 10 39 15 AM](https://user-images.githubusercontent.com/74991865/126526489-f19854a9-7631-4f44-b377-a960d109d775.png)
 
 
 ## Future Iterations
