@@ -58,13 +58,33 @@ describe 'Roomie Requests API' do
 
       user = JSON.parse(response.body, symbolize_names: true)
 
+      target_user = User.find(@target_user.id)
+
       expect(response).to be_success
       expect(user[:data][:attributes][:roomie_requests_sent]).to be_empty
-      expect(user[:data][:attributes][:roomie_requests_sent]).to be_empty
-      expect(user[:data][:attributes][:roomie_requests_sent]).to be_empty
       expect(@current_user.roomie_requests_as_requestor).to be_empty
-      expect(@target_user.roomie_requests_as_receiver).to be_empty
-      expect(@current_user.roomie_requests_as_requestor[status]).to be_nil
+      expect(@current_user.roomie_requests_as_receiver).to be_empty
+      expect(target_user.roomie_requests_as_requestor).to be_empty
+      expect(target_user.roomie_requests_as_receiver).to be_empty
+    end
+
+    it "doesn't add a roomie request if request already exists" do
+      user_params = {
+                      requestor_id: @current_user.id,
+                      receiver_id: @target_user.id
+                    }
+
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      @current_user.roomie_requests_as_requestor.create!(user_params)
+
+      VCR.use_cassette('add_users_roomie_requests') do
+        post '/api/v1/roomie_requests', headers: headers, params: user_params.to_json
+      end
+
+      user = JSON.parse(response.body, symbolize_names: true)
+
+      expect(user[:error]).to eq('request might already exist')
     end
   end
 end

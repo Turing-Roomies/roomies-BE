@@ -1,9 +1,14 @@
 class Api::V1::RoomieRequestsController < ApplicationController
   def create
     user = User.find(params[:roomie_request][:requestor_id])
-    user.roomie_requests_as_requestor.create!(roomie_params)
-
-    render json: UserSerializer.new(user)
+    request = user.roomie_requests_as_requestor.new(roomie_params)
+    
+    if request.duplicate_check
+      request.save
+      render json: UserSerializer.new(user)
+    else
+      render json: {error: "request might already exist"}, status: 400
+    end
   end
 
   def destroy

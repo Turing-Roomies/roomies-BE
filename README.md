@@ -56,6 +56,11 @@ Run through the standard Rails setup.
 
 Navigate to http://localhost:3000
 
+## Database Schema
+
+![Screen Shot 2021-07-21 at 3 44 13 PM](https://user-images.githubusercontent.com/74991865/126564292-c97df388-2dca-4625-ad37-026fd37a512b.png)
+
+
 ## API Endpoint Examples
 
 #### USER LOGIN
