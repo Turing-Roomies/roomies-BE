@@ -94,10 +94,10 @@ Endpoint: https://turing-roomies-be.herokuapp.com/api/v1/roomies
 Verb: POST
 
 ```
-Body : {
-         "roomie_a_id": 5,
-         "roomie_b_id": 14
-       }
+Body: {
+         "requestor_id": 5,
+         "receiver_id": 9
+      }
 ```
 
 #### DECLINING A ROOMIE REQUEST
