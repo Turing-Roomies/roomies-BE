@@ -15,7 +15,7 @@
 
 ## Overview
 
-Roomies is an app designed to connect people looking for roommates in any city based on specifications such as age, gender, budget, etc. Roomies Backend specifically creates several APIs to be used by the frontend, including the signed-in user's info, as well as that user's favorited roommates, and all users for a specific search query. 
+Roomies is an app designed to connect people looking for roommates in any city based on specifications such as age, gender, budget, etc. Roomies backend specifically creates several APIs to be used by the frontend, including the signed-in user's info, as well as the ability for a user to request or accept/decline  favorited roommates, and all users for a specific search query. 
 
 - [Project Spec](https://mod4.turing.edu/projects/capstone/)
 - [Docker Image](https://hub.docker.com/repository/docker/yitwix/roomies-be_web)
@@ -123,7 +123,6 @@ Body: {
 ## Future Iterations
 
 - Add a messenger platform so potentials roomies can message each other through the app
-- Allow roomies to cancel a roomie request
 - Add a profile view to display additional information when a roomie's card is clicked
 - Gather more information about each roomies, like hobbies, budget, job, and more
 
