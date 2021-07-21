@@ -23,10 +23,10 @@ class User < ApplicationRecord
       foreign_key: :receiver_id,
       class_name: :Roomie
 
-   has_many :requestors, through: :roomies_as_receiver
-   has_many :receivers, through: :roomies_as_requestor
+  has_many :requestors, through: :roomies_as_receiver
+  has_many :receivers, through: :roomies_as_requestor
 
-   def all_roomies
+  def all_roomies
       self.roomies_as_requestor + self.roomies_as_receiver
-   end
+  end
 end
